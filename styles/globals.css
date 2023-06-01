@@ -1,22 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 .quote-container {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-  }
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
 
-  .quote-text {
-    font-size: 16px;
-    color: #0558ab;
-    display: inline-block;
-  }
+.quote-text {
+  font-size: 16px;
+  color: #0558ab;
+  display: inline-block;
+}
 
-  .quote-text:before {
-    content: "\201C";
-    font-size: 24px;
-    margin-right: 8px;
-  }
+.quote-text:before {
+  content: '\201C';
+  font-size: 24px;
+  margin-right: 8px;
+}
 
-  .quote-text:after {
-    content: "\201D";
-    font-size: 24px;
-    margin-left: 8px;
-  }
+.quote-text:after {
+  content: '\201D';
+  font-size: 24px;
+  margin-left: 8px;
+}
