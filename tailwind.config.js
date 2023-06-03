@@ -12,15 +12,20 @@ module.exports = {
     extend: {
       colors: {
         //background colours
-        first: '#e4f9f5',
-        second: '#30e3ca',
-        third: '#11999e',
-        fourth: '#40514e',
+        first: '#bad7df',
+        second: '#ffe2e2',
+        third: '#fbe8d3',
+        fourth: '#99ddcc',
         //text colours
         primary: '#212121',
-        secondary: '#757575',
-        divider: '#BDBDBD',
-        icons: '#000000',
+        secondary: '#928a97',
+        green: '#008891',
+        divider: '#3f72af',
+        indigo: '#4d606e',
+        dark: '#32424a',
+        icons: '#222831',
+        //button colours
+        purple: '#b793e6',
       },
     },
   },
