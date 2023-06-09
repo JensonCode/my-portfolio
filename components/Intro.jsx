@@ -49,7 +49,7 @@ const Intro = () => {
                 loaded ? '' : '-translate-x-full'
               }`}
             >
-              <h1>I'm</h1>
+              <h1>I&apos;m</h1>
 
               <h1 className=' text-secondary underline'>
                 {adjectives[adjectiveIndex]}
