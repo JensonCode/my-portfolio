@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from '@/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-
+import SocialMedia from './pageTools/SocialMedia';
 // Navbar
 const navItems = [
   { name: 'introduction', pathName: '/#introduction', colour: 'bg-first' },
@@ -24,8 +24,8 @@ export default function Navbar() {
       const currIndex = navItems.findIndex((item) => {
         const section = document.getElementById(item.name);
         return (
-          section.offsetTop < currentPosition &&
-          section.offsetTop + section.offsetHeight > currentPosition
+          section.offsetTop < currentPosition + 80 &&
+          section.offsetTop + section.offsetHeight > currentPosition + 80
         );
       });
 
@@ -47,7 +47,7 @@ export default function Navbar() {
       >
         <nav
           id='nav'
-          className={`flex items-center w-full h-[80px] pr-[5%] lg:pr-0 text-primary ${backgroundColour}`}
+          className={`flex items-center justify-between lg:justify-start w-full h-[80px] pr-[5%] lg:pr-0 text-dark ${backgroundColour} `}
         >
           {/* brand */}
           <div
@@ -69,7 +69,7 @@ export default function Navbar() {
             >
               <MenuIcon
                 className={
-                  'text-3xl text-icons transition-opacity opacity-0 delay-1000 duration-700 easy-in-out' +
+                  'text-3xl text-primary transition-opacity opacity-0 delay-1000 duration-700 easy-in-out' +
                   (!showMobileMenu && ' opacity-100 ')
                 }
               />
@@ -87,9 +87,9 @@ export default function Navbar() {
                 key={index}
                 className={`${
                   styles.flexCenter
-                } hover:text-white hover:bg-secondary/30 transition-colors duration-300 easy-in-out ${
+                } transition-colors hover:text-dark hover:bg-blue/30 duration-700 easy-in-out ${
                   item.pathName === activeItem.pathName
-                    ? 'border-b-4 border-divider'
+                    ? 'border-b-4 border-blue'
                     : ''
                 }`}
                 onClick={() => {
@@ -99,7 +99,7 @@ export default function Navbar() {
               >
                 <Link
                   href={item.pathName}
-                  className='h-full p-6'
+                  className='h-full p-6 text-lg font-bold'
                 >
                   {item.name.toUpperCase()}
                 </Link>
@@ -122,7 +122,7 @@ export default function Navbar() {
         <div
           id='sidebar'
           className={
-            `fixed top-0 right-0 w-[60vw] md:w-[40vw] h-full ${backgroundColour} shadow-lg z-20 transition-transform duration-1000 ease-in-out ` +
+            `fixed top-0 right-0 w-[60vw] md:w-[40vw] h-full ${backgroundColour} shadow-lg z-20 transition-transform duration-700 ease-in-out ` +
             (!showMobileMenu && ' translate-x-full ')
           }
         >
@@ -136,35 +136,40 @@ export default function Navbar() {
                 (showMobileMenu && ' rotate-180 ')
               }
             >
-              <MenuOpenIcon className='text-3xl text-icons' />
+              <MenuOpenIcon className='text-3xl text-primary' />
             </button>
           </div>
-          <div
-            id='sidebar-items'
-            className={`${showMobileMenu ? 'flex flex-col' : 'hidden'}`}
-          >
-            {navItems.map((item, index) => (
-              <div
-                id='sidebar-item'
-                key={index}
-                className={`${styles.flexCenter} ${
-                  item.pathName === activeItem.pathName
-                    ? 'border-b-4 border-divider'
-                    : ''
-                }`}
-                onClick={() => {
-                  setActiveItem(item);
-                  setShowMobileMenu(!showMobileMenu);
-                }}
-              >
-                <Link
-                  href={item.pathName}
-                  className={`flex h-full p-6 `}
+          <div className='flex flex-col justify-between'>
+            <div
+              id='sidebar-items'
+              className={`${showMobileMenu ? 'flex flex-col' : 'hidden'}`}
+            >
+              {navItems.map((item, index) => (
+                <div
+                  id='sidebar-item'
+                  key={index}
+                  className={`${styles.flexCenter} ${
+                    item.pathName === activeItem.pathName
+                      ? 'border-b-4 border-blue'
+                      : ''
+                  }`}
+                  onClick={() => {
+                    setActiveItem(item);
+                    setShowMobileMenu(!showMobileMenu);
+                  }}
                 >
-                  {item.name.toUpperCase()}
-                </Link>
-              </div>
-            ))}
+                  <Link
+                    href={item.pathName}
+                    className={`flex h-full p-6 font-bold md:text-2xl md:p-10`}
+                  >
+                    {item.name.toUpperCase()}
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <div className='mx-auto'>
+              <SocialMedia loaded={true} />
+            </div>
           </div>
         </div>
       </aside>

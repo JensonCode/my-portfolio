@@ -4,20 +4,33 @@ const Project = () => {
   return (
     <section
       id='project'
-      className=' bg-gradient-to-b from-second to-third px-[5%] lg:px-[10%] py-12'
+      className='bg-gradient-to-b from-second to-third px-[6%] lg:px-[12%] h-full'
     >
-      <div className='lg:py-16'>
+      <div className='py-[80px]'>
+        {/* Web projects */}
         <div className='mb-12'>
-          {/* Web projects */}
-          <SectionTag tagName='Web Projects' />
-          {products.map((product) => (
-            <ProjectCard project={product} />
+          <SectionTag
+            tagName='Web Project'
+            color='bg-deepPurple/70'
+          />
+          {products.map((product, index) => (
+            <ProjectCard
+              project={product}
+              key={index}
+            />
           ))}
         </div>
+        {/* Academic  projects */}
         <div className='mb-12'>
-          <SectionTag tagName='Academic Project' />
-          {academicProject.map((project) => (
-            <ProjectCard project={project} />
+          <SectionTag
+            tagName='Academic Project'
+            color='bg-deepPurple/70'
+          />
+          {academicProject.map((project, index) => (
+            <ProjectCard
+              project={project}
+              key={index}
+            />
           ))}
         </div>
       </div>
@@ -34,7 +47,7 @@ const products = [
     start: 'MAY 2023',
     end: 'PRESENT',
     company: 'Easy GoGo Limited',
-    position: 'Full-stack Developer',
+    position: 'Web Developer',
     description:
       'Transformed an abandoned Vue.js project into a Next.js application with a fresh design and functionality.',
     takeaway: [
@@ -50,39 +63,21 @@ const products = [
 
 const academicProject = [
   {
-    name: 'Artwork app',
-    pic: '/project/boogabot.webp',
-    start: '2021',
+    name: 'Artwork application',
+    pic: '/project/artwork.webp',
+    start: '2022',
     end: null,
     company: 'Seneca College',
     position: 'Student',
     description:
       'College assignment: Developed an Express server that fetched sample movie data from MongoDB, and displayed it using a simple layout built with Bootstrap components.',
     takeaway: [
-      'Gained experience with Express.js and API routing',
-      'Explored the usage of Mongoose for database operations',
+      'Managed react states with Jotai',
+      'Gain knowlegde of authentication and JWT',
+      'Combined the usage of Mongoose and Express.js for CRUD opertaions',
       'Appreciated the convenience of Bootstrap components',
-      'introducted my first ever frontend framework',
     ],
     stacks: ['Next.js', 'Bootstrap', 'Express.js', 'MongoDB'],
-    link: 'https://booga-frontend-next-js.vercel.app/',
-  },
-  {
-    name: 'Simple Movie App',
-    pic: '/project/boogabot.webp',
-    start: '2021',
-    end: null,
-    company: 'Seneca College',
-    position: 'Student',
-    description:
-      'College assignment: Developed an Express server that fetched sample movie data from MongoDB, and displayed it using a simple layout built with Bootstrap components.',
-    takeaway: [
-      'Gained experience with Express.js and API routing',
-      'Explored the usage of Mongoose for database operations',
-      'Appreciated the convenience of Bootstrap components',
-      'introducted my first ever frontend framework',
-    ],
-    stacks: ['Next.js', 'Bootstrap', 'Express.js', 'MongoDB'],
-    link: 'https://booga-frontend-next-js.vercel.app/',
+    link: 'https://web-422-assignment-6-self.vercel.app/',
   },
 ];

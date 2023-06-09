@@ -5,17 +5,17 @@ const ProjectCard = ({ project }) => {
   return (
     <>
       <a
-        className={`group grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-col rounded-lg hover:bg-divider/20 hover:shadow-xl ${styles.hoverSmooth} my-4`}
+        className={`group grid lg:grid-cols-2 my-4 p-3 px-6 lg:p-0 rounded-lg bg-white/40 lg:bg-transparent lg:hover:bg-white/20 hover:shadow-xl ${styles.hoverSmooth}`}
         href={project.link}
         target='_blank'
       >
         <div
           id='project details'
-          className={`grid gap-3 px-3 group-hover:bg-divider/10 rounded-l-lg py-4 ${styles.groupHoverSmooth} `}
+          className={`grid gap-3 p-2 md:p-6 rounded-l-lg group-hover:bg-gray-200/40  ${styles.groupHoverSmooth} `}
         >
           {/* project name */}
           <span
-            className={`text-green group-hover:text-dark font-bold group-hover:underline cursor-pointer ${styles.groupHoverSmooth}`}
+            className={`text-pearl text-base md:text-lg lg:text-base font-semibold group-hover:underline group-hover:text-dark group-hover:font-bold cursor-pointer ${styles.groupHoverSmooth}`}
           >
             {project.name}
           </span>
@@ -30,7 +30,7 @@ const ProjectCard = ({ project }) => {
           />
 
           <p
-            className={`mb-4 px-1 text-indigo group-hover:text-dark font-medium group-hover:font-semibold group-hover:underline ${styles.groupHoverSmooth}`}
+            className={`mb-4 px-1 text-base md:text-lg lg:text-base text-dark font-medium group-hover:text-primary group-hover:underline ${styles.groupHoverSmooth}`}
           >
             {project.description}
           </p>
@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => {
             {project.stacks.map((stack, index) => (
               <div
                 key={index}
-                className='flex ftems-center text-sm'
+                className='flex items-center text-sm md:text-base lg:text-sm'
               >
                 <Image
                   src={`${getStackIcon(stack)}`}
@@ -48,7 +48,7 @@ const ProjectCard = ({ project }) => {
                   width={25}
                 />
                 <span
-                  className={`pl-2 text-indigo group-hover:text-dark font-semibold ${styles.groupHoverSmooth}`}
+                  className={`pl-2 text-dark font-semibold group-hover:text-primary ${styles.groupHoverSmooth}`}
                 >
                   {stack}
                 </span>
@@ -58,10 +58,10 @@ const ProjectCard = ({ project }) => {
         </div>
         {/* job duty */}
         <div
-          className={`grid grid-row-2 pl-10 group-hover:underline ${styles.groupHoverSmooth}`}
+          className={`grid grid-row-2 px-2 py-4 lg:pl-10 text-base md:text-lg lg:text-base group-hover:underline ${styles.groupHoverSmooth}`}
         >
           <div
-            className={`flex flex-col text-green group-hover:text-dark font-bold self-end ${styles.groupHoverSmooth}`}
+            className={`flex flex-col font-bold self-end text-pearl group-hover:text-dark ${styles.groupHoverSmooth}`}
           >
             {/* project date */}
             <span className='pb-1'>
@@ -73,20 +73,24 @@ const ProjectCard = ({ project }) => {
               {project.position}, {project.company}
             </span>
           </div>
-          <div className='text-indigo'>
-            {/* sales */}
-            <h2 className='pb-1 font-medium'>Biggest takeaway</h2>
-            <ul>
-              {project.takeaway.map((item, index) => (
-                <li
-                  key={index}
-                  className='font-medium'
-                >
-                  ．{item}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div
+            className={`text-dark font-medium ${styles.groupHoverSmooth} group-hover:text-primary`}
+          >
+            <h2 className='pb-1 font-medium'>Takeaway</h2>
+            <div className='pl-4'>
+              {/* sales */}
+              <ul>
+                {project.takeaway.map((item, index) => (
+                  <li
+                    key={index}
+                    className='font-medium '
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>{' '}
         </div>
       </a>
     </>

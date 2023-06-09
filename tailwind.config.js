@@ -18,14 +18,17 @@ module.exports = {
         fourth: '#99ddcc',
         //text colours
         primary: '#212121',
-        secondary: '#928a97',
-        green: '#008891',
-        divider: '#3f72af',
-        indigo: '#4d606e',
+        secondary: '#505458',
         dark: '#32424a',
-        icons: '#222831',
-        //button colours
+        //other colours
+        pearl: '#38817a',
+        blue: '#3f72af',
         purple: '#b793e6',
+        deepPurple: '#512e67',
+        red: '#ff6699',
+        blood: '#c3195d',
+        sky: '#33cccc',
+        brown: '#463832',
       },
     },
   },
