@@ -1,7 +1,7 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-
+import Link from 'next/link';
 const SocialMedia = ({ loaded, fixed }) => {
   const socialMedia = [
     {
@@ -33,14 +33,14 @@ const SocialMedia = ({ loaded, fixed }) => {
       aria-label='socialmedia'
     >
       {socialMedia.map((elem, index) => (
-        <a
+        <Link
           key={index}
           href={elem.link}
           target='_blank'
           className='hover:bg-white/40 rounded-full h-10 w-10 flex items-center justify-center'
         >
           {elem.icon}
-        </a>
+        </Link>
       ))}
     </div>
   );

@@ -1,10 +1,11 @@
 import styles from '@/styles';
 import Image from 'next/image';
 import { getStackIcon } from '@/lib/project';
+import Link from 'next/link';
 const ProjectCard = ({ project }) => {
   return (
     <>
-      <a
+      <Link
         className={`group grid lg:grid-cols-2 my-4 p-3 px-6 lg:p-0 rounded-lg bg-white/40 lg:bg-transparent lg:hover:bg-white/20 hover:shadow-xl ${styles.hoverSmooth}`}
         href={project.link}
         target='_blank'
@@ -92,7 +93,7 @@ const ProjectCard = ({ project }) => {
             </div>
           </div>{' '}
         </div>
-      </a>
+      </Link>
     </>
   );
 };

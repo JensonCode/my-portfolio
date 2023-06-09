@@ -4,7 +4,7 @@ import SocialMedia from './pageTools/SocialMedia';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ContactlessIcon from '@mui/icons-material/Contactless';
 import Image from 'next/image';
-
+import Link from 'next/link';
 const adjectives = [
   'self-driven',
   'a continuous learner',
@@ -66,9 +66,9 @@ const Intro = () => {
                 loaded ? 'opacity-100' : ''
               } bg-red hover:bg-blood hover:text-second hover:translate-y-1 hover:scale-110`}
             >
-              <a href='/#project'>
+              <Link href='/#project'>
                 See my projects <ArrowDownwardIcon className='animate-bounce' />
-              </a>
+              </Link>
             </button>
             <button
               className={`h-14 w-64 rounded-[30px] transition-all ease-in-out delay-[300ms] duration-700 hover:duration-300 opacity-0 ${
@@ -77,9 +77,9 @@ const Intro = () => {
                 styles.buttonHoverScale
               } bg-sky hover:bg-blue hover:text-fourth hover:translate-y-1 hover:scale-110`}
             >
-              <a href='/#contact'>
+              <Link href='/#contact'>
                 Contact me <ContactlessIcon />
-              </a>
+              </Link>
             </button>
             {/* social media links */}
             <SocialMedia loaded={loaded} />
