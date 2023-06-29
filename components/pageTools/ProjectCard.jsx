@@ -1,7 +1,7 @@
-import styles from '@/styles';
 import Image from 'next/image';
-import { getStackIcon } from '@/lib/project';
 import Link from 'next/link';
+import styles from '@/styles';
+import { getStackIcon } from '@/lib/project';
 const ProjectCard = ({ project }) => {
   return (
     <>
@@ -31,7 +31,7 @@ const ProjectCard = ({ project }) => {
           />
 
           <p
-            className={`mb-4 px-1 text-base md:text-lg lg:text-base text-dark font-medium group-hover:text-primary group-hover:underline ${styles.groupHoverSmooth}`}
+            className={`mb-4 px-1 text-sm md:text-lg lg:text-base text-dark font-medium group-hover:text-primary group-hover:underline ${styles.groupHoverSmooth}`}
           >
             {project.description}
           </p>
@@ -49,7 +49,7 @@ const ProjectCard = ({ project }) => {
                   width={25}
                 />
                 <span
-                  className={`pl-2 text-dark font-semibold group-hover:text-primary ${styles.groupHoverSmooth}`}
+                  className={`pl-2 text-dark font-semibold group-hover:text-primary ${styles.groupHoverSmooth} text-sm md:text-lg lg:text-base`}
                 >
                   {stack}
                 </span>
@@ -65,17 +65,17 @@ const ProjectCard = ({ project }) => {
             className={`flex flex-col font-bold self-end text-pearl group-hover:text-dark ${styles.groupHoverSmooth}`}
           >
             {/* project date */}
-            <span className='pb-1'>
+            <span className='pb-1 text-sm md:text-lg lg:text-base'>
               {project.start}
               {project.end ? ' — ' + project.end : ''}
             </span>
             {/* position */}
-            <span className='pb-3'>
+            <span className='pb-3 text-sm md:text-lg lg:text-base'>
               {project.position}, {project.company}
             </span>
           </div>
           <div
-            className={`text-dark font-medium ${styles.groupHoverSmooth} group-hover:text-primary`}
+            className={`text-sm md:text-lg lg:text-base text-dark font-medium ${styles.groupHoverSmooth} group-hover:text-primary`}
           >
             <h2 className='pb-1 font-medium'>Takeaway</h2>
             <div className='pl-4'>

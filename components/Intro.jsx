@@ -1,12 +1,11 @@
 import styles from '@/styles';
 import { useState, useEffect } from 'react';
 import SocialMedia from './pageTools/SocialMedia';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import ContactlessIcon from '@mui/icons-material/Contactless';
+import { ArrowDownward, Contactless } from '@mui/icons-material';
 import Image from 'next/image';
 import Link from 'next/link';
 const adjectives = [
-  'self-driven',
+  'proactive',
   'a continuous learner',
   'curious',
   'passionate',
@@ -67,7 +66,7 @@ const Intro = () => {
               } bg-red hover:bg-blood hover:text-second hover:translate-y-1 hover:scale-110`}
             >
               <Link href='/#project'>
-                See my projects <ArrowDownwardIcon className='animate-bounce' />
+                See my projects <ArrowDownward className='animate-bounce' />
               </Link>
             </button>
             <button
@@ -78,7 +77,7 @@ const Intro = () => {
               } bg-sky hover:bg-blue hover:text-fourth hover:translate-y-1 hover:scale-110`}
             >
               <Link href='/#contact'>
-                Contact me <ContactlessIcon />
+                Contact me <Contactless />
               </Link>
             </button>
             {/* social media links */}

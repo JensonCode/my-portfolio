@@ -4,6 +4,8 @@ import About from '@/components/About';
 import Contact from '@/components/Contact';
 import FixedSocialMedia from '@/components/pageTools/FixedSocialMedia';
 import Footer from '@/components/Footer';
+
+//https://my-portfolio-jensoncode.vercel.app/
 export default function Home() {
   return (
     <>
@@ -12,7 +14,7 @@ export default function Home() {
       <About />
       <Contact />
       <FixedSocialMedia />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

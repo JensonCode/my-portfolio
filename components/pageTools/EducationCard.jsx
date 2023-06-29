@@ -3,10 +3,16 @@ const EducationCard = ({ education }) => {
     <div className='flex flex-col md:flex border border-black text-dark rounded-[15px] p-4 '>
       <div className='pr-4'>{education.icon}</div>
       <div>
-        <div className='font-semibold text-lg'>{education.major}</div>
-        <div className='font-semibold text-lg pb-4'>{education.school}</div>
-        <div className='font-medium'>{education.location}</div>
-        <div className='font-medium'>
+        <div className='font-semibold text-sm md:text-lg lg:text-base'>
+          {education.major}
+        </div>
+        <div className='font-semibold text-sm md:text-lg lg:text-base pb-4'>
+          {education.school}
+        </div>
+        <div className='font-medium text-sm md:text-lg lg:text-base'>
+          {education.location}
+        </div>
+        <div className='font-medium text-sm md:text-lg lg:text-base'>
           {education.start} — {education.end}
         </div>
       </div>

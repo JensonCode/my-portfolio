@@ -1,24 +1,23 @@
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import Link from 'next/link';
+import { GitHub, LinkedIn, Twitter } from '@mui/icons-material';
+
 const SocialMedia = ({ loaded, fixed }) => {
   const socialMedia = [
     {
       icon: (
-        <GitHubIcon className='text-[#6e5494] text-3xl md:text-4xl lg:text-3xl' />
+        <GitHub className='text-[#6e5494] text-3xl md:text-4xl lg:text-3xl' />
       ),
       link: 'https://github.com/JensonCode',
     },
     {
       icon: (
-        <LinkedInIcon className='text-[#0077b5] text-3xl md:text-4xl lg:text-3xl' />
+        <LinkedIn className='text-[#0077b5] text-3xl md:text-4xl lg:text-3xl' />
       ),
-      link: 'https://www.linkedin.com/in/cheuk-lung-li-542307269',
+      link: 'https://www.linkedin.com/in/jenson-li-dev/',
     },
     {
       icon: (
-        <TwitterIcon className='text-[#00acee] text-3xl md:text-4xl lg:text-3xl' />
+        <Twitter className='text-[#00acee] text-3xl md:text-4xl lg:text-3xl' />
       ),
       link: 'https://twitter.com/lcllcl1457501',
     },

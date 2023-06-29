@@ -13,17 +13,17 @@ const About = () => {
           <h2 className='font-semibold mb-4 text-pearl group-hover:underline group-hover:text-dark '>
             Story
           </h2>
-          <p className='font-medium text-dark hover:text-primary hover:underline'>
+          <p className='font-medium text-sm md:text-lg lg:text-base text-dark hover:text-primary hover:underline'>
             I hold an economics degree from Hong Kong and initially worked as a
             B2B salesman. However, my interest in data analysis sparked a desire
             to change my career path. I pursued computer programming studies at
             Seneca College, where I discovered a passion for web development and
-            programming as a whole.
+            programming.
           </p>
           <br />
-          <p className='font-medium mb-4 text-dark hover:text-primary hover:underline'>
-            Now, I am fully dedicated to building web applications and expanding
-            my programming skills.I enjoy embracing new challenges and
+          <p className='font-medium text-sm md:text-lg lg:text-base mb-4 text-dark hover:text-primary hover:underline'>
+            Currently, I am fully dedicated to building web applications and
+            expanding my programming skills.I enjoy embracing new challenges and
             collaborating with diverse teams to bring ideas to life. With a
             background in economics and a keen interest in programming, I aim to
             create impactful solutions that deliver value to businesses and
@@ -31,7 +31,7 @@ const About = () => {
           </p>
         </div>
         {/* Fact and habit */}
-        <div className='p-2'>
+        <div className='p-2 text-sm md:text-lg lg:text-base'>
           <div className='mb-4 group'>
             <h2 className='font-semibold mb-4 text-pearl group-hover:underline group-hover:text-dark'>
               Facts
@@ -62,7 +62,7 @@ const About = () => {
             <h2 className='font-semibold text-pearl mb-4 group-hover:underline group-hover:text-dark'>
               Education
             </h2>
-            <div className='grid grid-cols-2 gap-2'>
+            <div className='grid md:grid-cols-2 gap-2'>
               {education.map((edu, index) => (
                 <EducationCard
                   education={edu}
@@ -75,11 +75,11 @@ const About = () => {
             <h2 className='font-semibold text-pearl mb-4 group-hover:underline group-hover:text-dark'>
               Skills
             </h2>
-            <div className='grid grid-cols-2 gap-2 font-medium text-dark'>
+            <div className='grid grid-cols-2 gap-2 font-medium text-dark text-sm md:text-lg lg:text-base'>
               {skillList.map((skill, index) => (
                 <div
                   key={index}
-                  className='flex space-x-4 hover:bg-blue/40 hover:text-dark '
+                  className='flex items-center space-x-4 hover:bg-blue/40 hover:text-dark '
                 >
                   <Image
                     src={`${getStackIcon(skill.icon)}`}

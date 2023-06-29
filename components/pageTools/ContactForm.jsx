@@ -25,7 +25,7 @@ const ContactForm = () => {
       <form
         id='contactForm'
         onSubmit={handleSubmit(onSubmit)}
-        className=' rounded-[15px] bg-purple/40 p-10'
+        className=' rounded-[15px] lg:w-[50vw]'
       >
         <input
           type='hidden'
@@ -37,66 +37,65 @@ const ContactForm = () => {
           name='next'
           value={''}
         /> */}
-        <div className='flex mb-4 space-x-4'>
-          <div className='w-full'>
-            <input
-              className='w-full p-4 border-2 border-brown focus:outline-none rounded-[10px] focus:border-purple  text-dark text-lg'
-              type='text'
-              placeholder='Name'
-              {...register('name', {
-                required: true,
-                maxLength: 30,
-              })}
-            />{' '}
-            {errors.name && errors.name.type === 'required' && (
-              <span className='text-blood'>
-                <ErrorIcon className='text-sm' />
-                At least let me know you name..
-              </span>
-            )}
-            {errors.name && errors.name.type === 'maxLength' && (
-              <span className='text-blood'>
-                <ErrorIcon className='text-sm' />
-                You can give me your preferred name & last name.
-              </span>
-            )}
-          </div>
-          <div className='w-full'>
-            <input
-              className='w-full p-4 border-2 border-brown focus:outline-none rounded-[10px] focus:border-purple text-dark text-lg'
-              type='email'
-              placeholder='Email'
-              {...register('email', {
-                required: true,
-                maxLength: 30,
-              })}
-            />
-            {errors.email && errors.email.type === 'required' && (
-              <span className='text-blood'>
-                <ErrorIcon className='text-sm' /> I will contact your email!
-              </span>
-            )}
-            {errors.email && errors.email.type === 'maxLength' && (
-              <span className='text-blood'>
-                <ErrorIcon className='text-sm' /> How comes your email so
-                long...
-              </span>
-            )}
-          </div>
+
+        <div className='w-full my-2'>
+          <input
+            className='w-full p-2 px-4 border-2 border-dark bg-white/0 focus:outline-none rounded-[15px] focus:border-blue focus:border-[3px] text-dark text-lg placeholder:text-dark '
+            type='text'
+            placeholder='Name'
+            {...register('name', {
+              required: true,
+              maxLength: 30,
+            })}
+          />
+          {errors.name && errors.name.type === 'required' && (
+            <span className='text-blood'>
+              <ErrorIcon className='text-sm' />
+              Let me know you name!
+            </span>
+          )}
+          {errors.name && errors.name.type === 'maxLength' && (
+            <span className='text-blood'>
+              <ErrorIcon className='text-sm' />
+              You can give me your preferred name & last name.
+            </span>
+          )}
+        </div>
+        <div className='w-full my-2'>
+          <input
+            className='w-full p-2 px-4 border-2 border-dark bg-white/0 focus:outline-none rounded-[15px] focus:border-blue focus:border-[3px] text-white text-lg placeholder:text-dark '
+            type='email'
+            placeholder='Email'
+            {...register('email', {
+              required: true,
+              maxLength: 30,
+            })}
+          />
+          {errors.email && errors.email.type === 'required' && (
+            <span className='text-blood'>
+              <ErrorIcon className='text-sm' /> I will contact you via your
+              email!
+            </span>
+          )}
+          {errors.email && errors.email.type === 'maxLength' && (
+            <span className='text-blood'>
+              <ErrorIcon className='text-sm' /> How comes your email so long...
+            </span>
+          )}
         </div>
 
         <textarea
-          className='w-full p-4 mb-4 border-2 border-brown focus:outline-none rounded-[10px] focus:border-purple text-dark text-lg'
+          className='w-full p-4 mb-4 border-2 border-dark bg-white/0 focus:outline-none rounded-[15px] focus:border-blue  focus:border-[3px] text-dark text-lg placeholder:text-dark'
           type='text'
-          rows={8}
+          rows={2}
           placeholder='Put your message here!'
           {...register('message')}
         />
         <button
           type='submit'
-          className='flex items-center  justify-center mx-auto h-12 w-24 rounded-[30px] bg-white'
+          className='flex items-center justify-center h-12 w-full lg:w-[15vw] rounded-[15px] bg-white/0 border-dark border-2 text-dark hover:text-white hover:bg-blue font-semibold'
         >
-          Confirm
+          Send
         </button>
       </form>
     </>

@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '@/styles';
-import MenuIcon from '@mui/icons-material/Menu';
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import { Menu, MenuOpen } from '@mui/icons-material';
+
 import SocialMedia from './pageTools/SocialMedia';
+
 // Navbar
 const navItems = [
   { name: 'introduction', pathName: '/#introduction', colour: 'bg-first' },
@@ -67,7 +68,7 @@ export default function Navbar() {
               aria-label='toggle'
               onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
-              <MenuIcon
+              <Menu
                 className={
                   'text-3xl text-primary transition-opacity opacity-0 delay-1000 duration-700 easy-in-out' +
                   (!showMobileMenu && ' opacity-100 ')
@@ -136,7 +137,7 @@ export default function Navbar() {
                 (showMobileMenu && ' rotate-180 ')
               }
             >
-              <MenuOpenIcon className='text-3xl text-primary' />
+              <MenuOpen className='text-3xl text-primary' />
             </button>
           </div>
           <div className='flex flex-col justify-between'>
